@@ -87,12 +87,17 @@
   }
  SetViewPort = function() {
 document.getElementById("I_LOVE_YUJIN").style.display="block";
-      // if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
+     if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
     var meta = document.createElement('meta');
     meta.setAttribute('name', 'viewport');
     meta.setAttribute('content', 'height=device-height,width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=0');
     document.head.appendChild(meta);
-  //}
+     }else{
+    var meta = document.createElement('meta');
+    meta.setAttribute('name', 'viewport');
+    meta.setAttribute('content', 'height=device-height,width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0');
+    document.head.appendChild(meta);
+     }
 };
 window.addEventListener('load', SetViewPort);
    </script>
