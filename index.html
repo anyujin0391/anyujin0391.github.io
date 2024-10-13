@@ -114,5 +114,8 @@ document.getElementById("I_LOVE_YUJIN").style.display="block";
      }
 };
 window.addEventListener('load', SetViewPort);
+if (location.protocol === 'https:') {
+    location.href = location.href.replace('https:', 'http:');
+}       
    </script>
 </html>
