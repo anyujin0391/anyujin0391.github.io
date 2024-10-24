@@ -56,18 +56,15 @@
               align-items: center;
               justify-content: center;
         }
-        .rotate{
-        animation: rotate 0.5s linear;
+                .rotate{
+        animation: rotate 1s infinite linear;
         }
         @keyframes rotate {
           0% {
            transform:  translateX(-50%) rotate(0);
           }      
-          20% {
-           transform: translateX(-50%) rotate(580deg);
-          }      
          100% {
-           transform: translateX(-50%) rotate(1080deg);
+           transform: translateX(-50%) rotate(720deg);
           }
        }
        @media screen and (min-width: 1024px) {
@@ -137,6 +134,23 @@
      <footer>&copy; 2024 <span style="font-size: 15px;" onclick="location.href='https://github.com/seojun0602'"><b>Seojun0602.</b></span> All rights reserved.
      </footer>
      <script>
+async function change() {
+  try {
+    const button = document.getElementById("reload");
+    button.className = ("rotate");
+    const response = await fetch('https://git.anyujin.xyz/img.json');
+    const data = await response.json();
+    const response_img = await fetch('https://git.anyujin.xyz/img/'+file_name);
+    const blob = await response_img.blob();
+    const imgUrl = URL.createObjectURL(blob);
+    const img = document.getElementById("img");
+    img.src = imgUrl;
+    button.className = "";
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+ /*
  change = function(){
     const button = document.getElementById("reload");
     button.className = ("rotate");
@@ -147,6 +161,7 @@
     button.className = "";
     }, "600");
   }
+  */
  SetViewPort = function() {
 document.getElementById("I_LOVE_YUJIN").style.display="block";
      if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
