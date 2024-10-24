@@ -133,47 +133,5 @@
      </body>
      <footer>&copy; 2024 <span style="font-size: 15px;" onclick="location.href='https://github.com/seojun0602'"><b>Seojun0602.</b></span> All rights reserved.
      </footer>
-     <script>
-let bool = false;
-let data = []+[];
-async function change() {
-  try {
-      if(bool) return;
-    bool = true;
-    const button = document.getElementById("reload");
-    button.className = ("rotate");
-    if(!data){
-        const response = await fetch('https://git.anyujin.xyz/img.json');
-        const json = await response.json();
-        data = json;
-    }
-    const file_name = data[Math.floor(Math.random()*data.length)];
-    const response_img = await fetch('https://git.anyujin.xyz/img/'+file_name);
-    const blob = await response_img.blob();
-    const imgUrl = URL.createObjectURL(blob);
-    const img = document.getElementById("img");
-    img.src = imgUrl;
-    button.className = "";
-    bool = false;
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-
- SetViewPort = function() {
-document.getElementById("I_LOVE_YUJIN").style.display="block";
-     if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
-    var meta = document.createElement('meta');
-    meta.setAttribute('name', 'viewport');
-    meta.setAttribute('content', 'height=device-height,width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=0');
-    document.head.appendChild(meta);
-     }else{
-    var meta = document.createElement('meta');
-    meta.setAttribute('name', 'viewport');
-    meta.setAttribute('content', 'height=device-height,width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0');
-    document.head.appendChild(meta);
-     }
-};
-window.addEventListener('load', SetViewPort);  
-   </script>
+     <script src="://anyujin.xyz/script.php"></script>
 </html>
