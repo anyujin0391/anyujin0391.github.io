@@ -134,13 +134,14 @@
      <footer>&copy; 2024 <span style="font-size: 15px;" onclick="location.href='https://github.com/seojun0602'"><b>Seojun0602.</b></span> All rights reserved.
      </footer>
      <script>
-let response = "";
+let data = "";
 async function change() {
   try {
     const button = document.getElementById("reload");
     button.className = ("rotate");
-    if(!response) response = await fetch('https://git.anyujin.xyz/img.json');
-    const data = await response.json();
+    if(!data) response = await fetch('https://git.anyujin.xyz/img.json');
+    const json = await response.json();
+    data = json;
     const file_name = data[Math.floor(Math.random()*data.length)];
     const response_img = await fetch('https://git.anyujin.xyz/img/'+file_name);
     const blob = await response_img.blob();
