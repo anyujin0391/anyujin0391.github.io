@@ -134,9 +134,12 @@
      <footer>&copy; 2024 <span style="font-size: 15px;" onclick="location.href='https://github.com/seojun0602'"><b>Seojun0602.</b></span> All rights reserved.
      </footer>
      <script>
-let data = "";
+let bool = false;
+let data = []+[];
 async function change() {
   try {
+      if(bool) return;
+    bool = true;
     const button = document.getElementById("reload");
     button.className = ("rotate");
     if(!data){
@@ -151,22 +154,12 @@ async function change() {
     const img = document.getElementById("img");
     img.src = imgUrl;
     button.className = "";
+    bool = false;
   } catch (error) {
     console.error('Error:', error);
   }
 }
- /*
- change = function(){
-    const button = document.getElementById("reload");
-    button.className = ("rotate");
-    const img = document.getElementById("img");
-    const timestamp = new Date().getTime();
-    img.src = "//sjw.dothome.co.kr/img.php?t=" + timestamp;
-    setTimeout(() => { 
-    button.className = "";
-    }, "600");
-  }
-  */
+
  SetViewPort = function() {
 document.getElementById("I_LOVE_YUJIN").style.display="block";
      if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
