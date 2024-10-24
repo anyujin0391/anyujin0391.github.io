@@ -139,9 +139,11 @@ async function change() {
   try {
     const button = document.getElementById("reload");
     button.className = ("rotate");
-    if(!data) response = await fetch('https://git.anyujin.xyz/img.json');
-    const json = await response.json();
-    data = json;
+    if(!data){
+        const response = await fetch('https://git.anyujin.xyz/img.json');
+        const json = await response.json();
+        data = json;
+    }
     const file_name = data[Math.floor(Math.random()*data.length)];
     const response_img = await fetch('https://git.anyujin.xyz/img/'+file_name);
     const blob = await response_img.blob();
