@@ -1,0 +1,137 @@
+<html id="I_LOVE_YUJIN">
+    <meta property="og:title" content="안유진" />
+    <meta property="og:description" content="안유진 랜덤 이미지!" />
+    <meta property="og:image" content="http://sjw.dothome.co.kr/img.php?timestamp" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <style>
+        html {
+           display:none;
+        }
+        .https {
+            position: relative;
+            top:70px;
+        }
+        .container {
+            display: block;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+        #img {
+            width: 120%;
+            border-radius: 30px;
+            object-fit: cover;
+            position: relative;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .h-text {
+             text-align: center;
+        }
+        .img-container {
+              text-align: center;
+              align-items: center;
+              justify-content: center;
+        }
+        #reload {
+            position: relative;
+            left:50%;
+            top:30px;
+            transform: translateX(-50%);
+        }
+        footer {
+              left:0;
+              color: #9CA3AF;
+              font-size: 14px;
+              text-align: center;
+              bottom: 15px;
+              font-family: Arial, sans-serif;
+              width: 100%;
+              height: 25px;
+              position : fixed;
+              align-items: center;
+              justify-content: center;
+        }
+                .rotate{
+        animation: rotate 1s infinite linear;
+        }
+        @keyframes rotate {
+          0% {
+           transform:  translateX(-50%) rotate(0);
+          }      
+         100% {
+           transform: translateX(-50%) rotate(720deg);
+          }
+       }
+       @media screen and (min-width: 1024px) {
+        #img {
+            height: 30vw;
+            width:auto;
+            border-radius: 30px;
+            object-fit: cover;
+        }
+        .https {
+              display:none;
+        }
+        #reload {
+            position: absolute;
+            left:-150px;
+            top:50%;
+            transform: translateY(-50%, -50%);
+        }
+        .container {
+            display: block;
+            align-items: none;
+            justify-content: none;
+            transform: translate(-50%, -50%);
+        }
+        footer {
+           background-color: rgba(255, 255, 255, 0.5);
+           color:#000;
+        }
+       }
+       @media screen and (orientation: landscape) {
+        #img {
+            height: 30vw;
+            width:auto;
+            border-radius: 30px;
+            object-fit: cover;
+        }
+        .https {
+              display:none;
+        }
+        #reload {
+            position: absolute;
+            left:-150px;
+            top:50%;
+            transform: translateY(-50%, -50%);
+        }
+        .container {
+            display: block;
+            align-items: none;
+            justify-content: none;
+            transform: translate(-50%, -50%);
+        }
+        footer {
+           background-color: rgba(255, 255, 255, 0.5);
+           color:#000;
+        }
+       }
+      </style>   
+      <body>
+          <div class="container">
+          <div class="h-text"><h3>안유진 랜덤 이미지 💕</h3></div>
+            <div class="img-container">
+                <img id="img" crossorigin="anonymous" src=""/>
+            </div>
+            <img id="reload" width="80px" src="button.jpg" onclick="change()">       
+        </div>
+     </body>
+     <footer>&copy; 2024 <span style="font-size: 15px;" onclick="location.href='https://github.com/seojun0602'"><b>Seojun0602.</b></span> All rights reserved.
+     </footer>
+     <script src="//anyujin.xyz/script.php"></script>
+</html>
